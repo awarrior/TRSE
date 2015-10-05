@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+     http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="core" class="engine.DefCore">
+		<!-- Branching -->
+		<property name="MRV_B" value="true"></property>
+		<!-- Propagator -->
+		<property name="FC_P" value="false"></property>
+		<property name="RSV_P" value="false"></property>
+	</bean>
+
+	<bean id="engine" class="engine.Engine">
+		<property name="ci" ref="core"></property>
+	</bean>
+
+</beans>
